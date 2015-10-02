@@ -14,14 +14,13 @@ module.exports = (robot) ->
     res.send "Why is that even a question? It's Upsilon, of course!!"
 
   robot.hear /the weather/i, (res) ->
-    res.send "Fetching weather"
-    robot.http("http://api.openweathermap.org/data/2.5/weather?zip=65401,us")
+    robot.http("http://api.openweathermap.org/data/2.5/weather?zip=65401,us&units=imperial")
       .get() (err, resp, body) ->
         if err
           res.send "Encountered an error: #{err}"
           return
-        res.send resp
-        res.send body
+        data = JSON.parse body
+        res.send "The current temperature is #{data.main.temp}º, the high for today is #{data.main.temp_max}º, and the low is #{data.main.temp_min}º"
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
