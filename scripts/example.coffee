@@ -12,6 +12,13 @@ module.exports = (robot) ->
 
   robot.hear /who is the best pledge class/i, (res) ->
     res.send "Why is that even a question? It's Upsilon, of course!!"
+
+  robot.hear /the weather/i, (res) ->
+    res.send "Fetching weather"
+    robot.http("api.openweathermap.org/data/2.5/weather?zip=65401,us")
+      .get() (err, resp, body) ->
+        res.send resp
+        res.send body
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
