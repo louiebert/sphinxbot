@@ -12,9 +12,6 @@ module.exports = (robot) ->
 
   robot.hear /who is the best pledge class/i, (res) ->
     res.send "Why is that even a question? It's Upsilon, of course!!"
-
-  robot.hear /badger/i, (res) ->
-    res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
