@@ -17,6 +17,9 @@ module.exports = (robot) ->
     res.send "Fetching weather"
     robot.http("api.openweathermap.org/data/2.5/weather?zip=65401,us")
       .get() (err, resp, body) ->
+        if err
+          res.send "Encountered an error: #{err}"
+          return
         res.send resp
         res.send body
   #
