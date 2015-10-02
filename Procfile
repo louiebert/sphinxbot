@@ -1,1 +1,1 @@
-web: bin/sphinxbot --adapter slack
+web: bin/hubot --adapter slack
