@@ -20,7 +20,7 @@ module.exports = (robot) ->
           res.send "Encountered an error: #{err}"
           return
         data = JSON.parse body
-        res.send "The current temperature is #{data.main.temp}º, the high for today is #{data.main.temp_max}º, and the low is #{data.main.temp_min}º"
+        res.send "The current temperature in Rolla is #{data.main.temp}º, the high for today is #{data.main.temp_max}º, and the low is #{data.main.temp_min}º"
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
