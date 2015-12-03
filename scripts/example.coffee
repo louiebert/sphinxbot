@@ -10,15 +10,15 @@
 
 module.exports = (robot) ->
 
-  robot.hear /{robot.name} help/i, (res) ->
-    res.send "
-    \'who is the best pledge class\' - Informs who the best pledge class is \n
-    \'the weather\' - Gives the current weather in Rolla"
+  # robot.hear /{robot.name} help/i, (msg) ->
+  #   res.send "
+  #   \'who is the best pledge class\' - Informs who the best pledge class is \n
+  #   \'the weather\' - Gives the current weather in Rolla"
 
-  robot.hear /who is the best pledge class/i, (res) ->
+  robot.respond /who is the best pledge class/i, (res) ->
     res.send "Why is that even a question? It's Upsilon, of course!!"
 
-  robot.hear /the weather/i, (res) ->
+  robot.respond /the weather/i, (res) ->
     current = ""
     high = ""
     low = ""
