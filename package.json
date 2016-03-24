@@ -23,10 +23,10 @@
     "npm": ">= 1.1.x"
   },
   "dependencies": {
-    "hubot": ">= 2.6.0 < 3.0.0",
+    "hubot": "^2.18.0",
     "hubot-slack": "^3.4.2"
   },
   "scripts": {
-    "start": "PORT=8080 BIND_ADDRESS=127.0.0.1 bin/hubot -n SphinxBot -a shell"
+    "start": "PORT=8080 BIND_ADDRESS=127.0.0.1 bin/hubot -n SphinxBot -a slack"
   }
 }
