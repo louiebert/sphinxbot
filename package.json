@@ -24,10 +24,9 @@
   },
   "dependencies": {
     "hubot": ">= 2.6.0 < 3.0.0",
-    "hubot-scripts": ">= 2.5.0 < 3.0.0",
     "hubot-slack": "^3.4.2"
   },
   "scripts": {
-    "start": "PORT=$OPENSHIFT_NODEJS_PORT BIND_ADDRESS=$OPENSHIFT_NODEJS_IP HUBOT_SLACK_TOKEN=xoxb-11729637988-YOnvV7PA0wKVmEIKfUhe3gEk bin/hubot -n Hubot -a shell"
+    "start": "PORT=$OPENSHIFT_NODEJS_PORT BIND_ADDRESS=$OPENSHIFT_NODEJS_IP bin/hubot -n SphinxBot -a shell"
   }
 }
