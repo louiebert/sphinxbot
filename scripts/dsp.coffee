@@ -2,7 +2,7 @@
 #   Utility commands surrounding Hubot uptime.
 #
 # Commands:
-#   hubot weather - tells the current temperature and high/low for the day in Rolla, MO
+#   hubot the weather - tells the current temperature and high/low for the day in Rolla, MO
 
 module.exports = (robot) ->
   robot.respond /the weather/i, (res) ->
