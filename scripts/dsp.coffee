@@ -9,23 +9,26 @@ module.exports = (robot) ->
   robot.hear /who is the best pledge class\?$/i, (msg) ->
     msg.send "Upsilon is the best pledge class, of course!"
 
-  robot.respond /the weather$/i, (res) ->
+  robot.hear /who isn't the best pledge class\?$/i, (msg) ->
+    msg.send "Who do you think? It's obviously Tau."
+
+  robot.respond /the weather$/i, (msg) ->
     current = ""
     high = ""
     low = ""
     robot.http("http://api.openweathermap.org/data/2.5/weather?id=4406282&units=imperial&APPID=878cfdada5727a9ca91f56e2d010c20c")
       .get() (err, resp, body) ->
         if err
-          res.send "Encountered an error: #{err}"
+          msg.send "Encountered an error: #{err}"
           return
         data = JSON.parse body
         current = data.main.temp
         robot.http("http://api.openweathermap.org/data/2.5/forecast/daily?id=4406282&cnt=1&units=imperial&APPID=878cfdada5727a9ca91f56e2d010c20c")
           .get() (err, resp, body) ->
             if err
-              res.send "Encountered an error: #{err}"
+              msg.send "Encountered an error: #{err}"
               return
             data = JSON.parse body
             high = data.list[0].temp.max
             low = data.list[0].temp.min
-            res.send "The current temperature in Rolla is #{current}º, the high for today is #{high}º, and the low is #{low}º"
+            msg.send "The current temperature in Rolla is #{current}º, the high for today is #{high}º, and the low is #{low}º"
