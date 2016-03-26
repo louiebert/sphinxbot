@@ -2,10 +2,14 @@
 #   Utility commands surrounding Hubot uptime.
 #
 # Commands:
+#   hubot who is the best pledge class - informs who the best pledge class is
 #   hubot the weather - tells the current temperature and high/low for the day in Rolla, MO
 
 module.exports = (robot) ->
-  robot.respond /the weather/i, (res) ->
+  robot.hear /who is the best pledge class\?$/i, (msg) ->
+    msg.send "Upsilon is the best pledge class, of course!"
+
+  robot.respond /the weather$/i, (res) ->
     current = ""
     high = ""
     low = ""
@@ -25,4 +29,3 @@ module.exports = (robot) ->
             high = data.list[0].temp.max
             low = data.list[0].temp.min
             res.send "The current temperature in Rolla is #{current}º, the high for today is #{high}º, and the low is #{low}º"
-        return
