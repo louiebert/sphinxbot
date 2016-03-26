@@ -9,7 +9,7 @@ module.exports = (robot) ->
   robot.hear /who is the best pledge class\?$/i, (msg) ->
     msg.send "Upsilon is the best pledge class, of course!"
 
-  robot.hear /who isn't the best pledge class\?$/i, (msg) ->
+  robot.hear /who isn’t the best pledge class\?$/i, (msg) ->
     msg.send "Who do you think? It's obviously Tau."
 
   robot.respond /the weather$/i, (msg) ->
