@@ -10,13 +10,11 @@
     "openshift"
   ],
   "author": {
-    "name": "Katie Miller",
-    "email": "katie@codemiller.com",
-    "url": "http://www.codemiller.com/"
+    "name": "Louie Bertoncin"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/codemiller/hubot-openshift"
+    "url": ""
   },
   "engines": {
     "node": ">= 0.8.x",

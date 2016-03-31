@@ -3,14 +3,20 @@
 #
 # Commands:
 #   hubot who is the best pledge class - informs who the best pledge class is
+#   hubot who isn't the best pledge class - informs who the best pledge class isn't
 #   hubot the weather - tells the current temperature and high/low for the day in Rolla, MO
 
 module.exports = (robot) ->
   robot.hear /who is the best pledge class\?$/i, (msg) ->
+    user = msg.user.name
     msg.send "Upsilon is the best pledge class, of course!"
+    msg.send "#{user}"
 
   robot.hear /who isn(’|')t the best pledge class\?$/i, (msg) ->
     msg.send "Who do you think? It's obviously Tau."
+
+  robot.router.post '/sphinxbot/chores/remind', (req, res) ->
+    robot.send
 
   robot.respond /the weather$/i, (msg) ->
     current = ""
