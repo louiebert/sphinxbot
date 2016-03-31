@@ -9,7 +9,7 @@
 module.exports = (robot) ->
   robot.hear /my name$/i, (msg) ->
     user = msg.user.name
-    msg.send "#{user}"
+    msg.send "#{user} is your name"
 
   robot.hear /who is the best pledge class\?$/i, (msg) ->
     msg.send "Upsilon is the best pledge class, of course!"
