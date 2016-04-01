@@ -7,19 +7,19 @@
 #   hubot the weather - tells the current temperature and high/low for the day in Rolla, MO
 
 module.exports = (robot) ->
-  robot.hear /my name$/i, (msg) ->
-    user = msg.user.name
-    print(user)
-    msg.send "#{user} is your name"
-
   robot.hear /who is the best pledge class\?$/i, (msg) ->
     msg.send "Upsilon is the best pledge class, of course!"
 
   robot.hear /who isn(’|')t the best pledge class\?$/i, (msg) ->
     msg.send "Who do you think? It's obviously Tau."
 
-  # robot.router.post '/sphinxbot/chores/remind', (req, res) ->
-  #   robot.send
+  robot.router.post '/sphinxbot/chores/remind', (req, res) ->
+    data = if req.body.payload? then JSON.parse req.body.payload else req.body
+    message = "Your chore is: ```#{data.chore}```"
+    for i in JSON.parse data.description
+      item = if i == data.description[0]? then "• #{i}" else "\n• #{i}"
+      message = message + item
+    robot.messageRoom data.user, message
 
   robot.respond /the weather$/i, (msg) ->
     current = ""
