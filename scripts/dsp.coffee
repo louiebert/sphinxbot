@@ -21,7 +21,7 @@ module.exports = (robot) ->
       message = message + item
     robot.messageRoom data.user, message
     res.writeHead 200, {'Content-Type': 'application/json'}
-    res.end 'Thanks\n'
+    res.end 'Sent\n'
 
   robot.respond /the weather$/i, (msg) ->
     current = ""
