@@ -17,7 +17,7 @@ module.exports = (robot) ->
     data = if req.body.payload? then JSON.parse req.body.payload else req.body
     message = "Your chore is: ```#{data.chore}```"
     for i in JSON.parse data.description
-      item = if i == data.description[0]? then "• #{i}" else "\n• #{i}"
+      item = if i == data.description[0]? then "• _#{i}_" else "\n• _#{i}_"
       message = message + item
     robot.messageRoom data.user, message
 
