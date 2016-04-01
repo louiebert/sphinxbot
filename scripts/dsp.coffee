@@ -20,6 +20,8 @@ module.exports = (robot) ->
       item = if i == data.description[0]? then "• _#{i}_" else "\n• _#{i}_"
       message = message + item
     robot.messageRoom data.user, message
+    res.writeHead 200, {'Content-Type': 'application/json'}
+    res.end 'Thanks\n'
 
   robot.respond /the weather$/i, (msg) ->
     current = ""
