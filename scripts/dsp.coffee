@@ -13,7 +13,7 @@ module.exports = (robot) ->
   robot.hear /who isn(’|')t the best pledge class\?$/i, (msg) ->
     msg.send "Who do you think? It's obviously Tau."
 
-  robot.router.post '/sphinxbot/chores/remind', (req, res) ->
+  robot.router.post '/hubot/chores/remind', (req, res) ->
     data = if req.body.payload? then JSON.parse req.body.payload else req.body
     message = "Your chore is: ```#{data.chore}```"
     for i in JSON.parse data.description
